@@ -1,145 +1,111 @@
-/* Impostazioni globali */
+/* font */
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}
 
-* {
-  box-sizing: border-box;
+/* header */
+header {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 36px;
+  margin: 0;
+}
+
+header p {
+  font-size: 18px;
+  margin: 10px 0 0;
+}
+
+/* navbar */
+nav {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+nav ul {
+  list-style: none;
   margin: 0;
   padding: 0;
 }
 
-body {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #333;
-}
-
-a {
-  color: #333;
-  text-decoration: none;
-}
-
-/* Header */
-
-header {
-  background-color: #fff;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 50px;
-}
-
-.logo {
-  font-size: 28px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-nav ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 nav ul li {
-  list-style: none;
-  margin: 0 10px;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
 }
 
 nav ul li a {
-  padding: 10px 15px;
-  border-radius: 5px;
-  transition: all 0.3s ease;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
 }
 
 nav ul li a:hover {
-  background-color: #333;
-  color: #fff;
+  color: #ccc;
 }
 
-/* Hero */
-
-.hero {
-  background-image: url('../images/pizza-hero.jpg');
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #fff;
-  text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+/* main section */
+main {
+  margin-top: 30px;
 }
 
-.hero h1 {
-  font-size: 60px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-}
-
-.hero p {
-  font-size: 24px;
-  font-weight: 500;
-  margin: 20px 0;
-}
-
-.hero a {
-  padding: 10px 20px;
-  border-radius: 5px;
-  background-color: #333;
-  color: #fff;
-  transition: all 0.3s ease;
-}
-
-.hero a:hover {
-  background-color: #fff;
-  color: #333;
-}
-
-/* Menu */
-
-.menu {
-  padding: 100px 0;
-}
-
-.menu-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 20px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-
-.menu-item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.menu-item img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px 5px 0 0;
-}
-
-.menu-item-info {
+section {
   padding: 20px;
-  text-align: center;
+  background-color: #f5f5f5;
+  margin-bottom: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.menu-item-info h3 {
+section h2 {
   font-size: 24px;
-  font-weight: 700;
+  margin-top: 0;
+}
+
+section p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 10px 0;
+}
+
+/* form */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+label {
+  display: block;
   margin-bottom: 10px;
-  text-transform: uppercase
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+input[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #444;
+}
