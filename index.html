@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pizzeria Ristorante</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="#" class="logo">Pizzeria Ristorante</a>
+            <nav>
+                <ul>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#about">Chi siamo</a></li>
+                    <li><a href="#location">Dove siamo</a></li>
+                    <li><a href="#contact">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Benvenuti alla Pizzeria Ristorante</h1>
+            <p>La nostra specialità sono le pizze cotte nel forno a legna. Venite a scoprire i nostri piatti!</p>
+            <a href="#menu" class="btn btn-primary">Scopri il nostro menu</a>
+        </div>
+    </section>
+
+    <section class="menu" id="menu">
+        <div class="container">
+            <h2>Il nostro menu</h2>
+            <div class="menu-item">
+                <img src="images/pizza-margherita.jpg" alt="Pizza Margherita">
+                <div class="menu-item-info">
+                    <h3>Pizza Margherita</h3>
+                    <p>Pomodoro, mozzarella, basilico</p>
+                    <p class="price">€7,00</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="images/pizza-diavola.jpg" alt="Pizza Diavola">
+                <div class="menu-item-info">
+                    <h3>Pizza Diavola</h3>
+                    <p>Pomodoro, mozzarella, salame piccante</p>
+                    <p class="price">€8,00</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="images/pizza-capricciosa.jpg" alt="Pizza Capricciosa">
+                <div class="menu-item-info">
+                    <h3>Pizza Capricciosa</h3>
+                    <p>Pomodoro, mozzarella, prosciutto cotto, funghi, carciofi, olive</p>
+                    <p class="price">€10,00</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="images/pizza-vegetariana.jpg" alt="Pizza Vegetariana">
+                <div class="menu-item-info">
+                    <h3>Pizza Vegetariana</h3>
+                    <p>Pomodoro, mozzarella, verdure di stagione</p>
+                    <p class="price">€9,00</p>
+               </div>
+          </div>
+<div class="menu-item">
+<img src="images/pasta-carbonara.jpg" alt="Pasta alla Carbonara">
+<div class="menu-item-info">
+<h3>Pasta alla Carbonara</h3>
+<p>Pasta, uova, pancetta, pecorino romano</p>
+<p class="price">€8,00</p>
+</div>
+</div>
+<div class="menu-item">
+<img src="images/lasagne.jpg" alt="Lasagne">
+<div class="menu-item-info">
+<h3>Lasagne</h3>
+<p>Pasta, ragù di carne, besciamella, formaggio</p>
+<p class="price">€10,00</p>
+</div>
+</div>
+</div>
+</section><section class="about" id="about">
+    <div class="container">
+        <h2>Chi siamo</h2>
+        <p>Siamo una pizzeria-ristorante che offre una vasta scelta di piatti, dalle pizze cotte nel forno a legna alle specialità di pasta e carne.</p>
+        <p>Utilizziamo solo ingredienti di qualità e freschi, preparando ogni piatto con cura e passione.</p>
+        <p>Venite a trovarci per una serata di gusto e relax!</p>
+    </div>
+</section>
+
+<section class="location" id="location">
+    <div class="container">
+        <h2>Dove siamo</h2>
+        <p>La nostra pizzeria-ristorante si trova in Via Roma, 12 a Milano.</p>
+        <p>Potete raggiungerci facilmente con i mezzi pubblici, la fermata della metropolitana più vicina è quella di Piazza San Babila.</p>
+        <div class="mapouter">
+            <div class="gmap_canvas">
+                <iframe width="100%" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=Via%20Roma%2012%20Milano&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <div class="container">
+        <h2>Contatti</h2>
+        <div class="contact-info">
+            <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>Via Roma, 12 - Milano</p>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-phone-alt"></i>
+                <p>+39 02 1234567</p>
+            </div>
+            <div class="info-item">
+                <i class="far fa-envelope"></i>
+                <p>info@pizzeriaristorante.it</p>
+            </div>
+        </div>
+      <section id="reservation">
+  <div class="container">
+    <h2>Prenota un tavolo</h2>
+    <form action="https://api.emailjs.com/api/v1.0/email/send" method="post">
+      <input type="hidden" name="service_id" value="service_7nn7jl4">
+      <input type="hidden" name="template_id" value="template_ha12y1s">
+      <input type="hidden" name="user_id" value="ja_63eFGLMCJkBxDv">
+      <div class="form-group">
+        <label for="name">Nome</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Telefono</label>
+        <input type="tel" id="phone" name="phone" required>
+      </div>
+      <div class="form-group">
+        <label for="date">Data</label>
+        <input type="date" id="date" name="date" required>
+      </div>
+      <div class="form-group">
+        <label for="time">Ora</label>
+        <input type="time" id="time" name="time" required>
+      </div>
+      <div class="form-group">
+        <label for="guests">Ospiti</label>
+        <select id="guests" name="guests" required>
+          <option value="1">1 ospite</option>
+          <option value="2">2 ospiti</option>
+          <option value="3">3 ospiti</option>
+          <option value="4">4 ospiti</option>
+          <option value="5">5 ospiti</option>
+          <option value="6+">6+ ospiti</option>
+        </select>
+      </div>
+      <button type="submit" class="btn">Prenota</button>
+    </form>
+  </div>
+</section>
+      <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+<script>
+   (function(){
+      emailjs.init("ja_63eFGLMCJkBxDv");
+   })();
+</script>
+</body>
+
+        
+
