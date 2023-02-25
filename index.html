@@ -1,70 +1,93 @@
 <!DOCTYPE html>
-<html lang="it">
-
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Pizzeria Ristorante</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+  <title>Pizzeria-Ristorante</title>
   <link rel="stylesheet" href="style.css">
+  <script type="text/javascript">
+   (function(){
+      emailjs.init("YOUR_USER_ID_FROM_EMAILJS");
+   })();
+  </script>
 </head>
-
 <body>
+  <!-- Header -->
   <header>
     <nav>
-      <a href="#home">Home</a>
-      <a href="#menu">Menu</a>
-      <a href="#prenota">Prenota</a>
-      <a href="#contatti">Contatti</a>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#reservation">Reservation</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
   </header>
 
+  <!-- Banner -->
   <section id="home">
-    <h1>Pizzeria Ristorante</h1>
-    <h2>Il meglio della cucina italiana</h2>
+    <div class="banner">
+      <h1>Pizzeria-Ristorante</h1>
+      <p>Welcome to our restaurant!</p>
+    </div>
   </section>
 
+  <!-- Menu -->
   <section id="menu">
-    <h2>Il nostro menu</h2>
-    <ul>
-      <li>
-        <h3>Pizza</h3>
-        <p>La nostra pizza è preparata solo con ingredienti freschi e di qualità. Scegli tra le nostre specialità o crea la tua pizza personalizzata.</p>
-      </li>
-      <li>
-        <h3>Pasta</h3>
-        <p>La pasta è il fiore all'occhiello della nostra cucina. Abbiamo una vasta scelta di formati e condimenti, dai classici ai più innovativi.</p>
-      </li>
-      <li>
-        <h3>Secondi piatti</h3>
-        <p>Anche gli amanti della carne e del pesce troveranno piatti deliziosi nel nostro menu. Tutti i nostri piatti sono preparati al momento e serviti caldi.</p>
-      </li>
-      <li>
-        <h3>Dolci</h3>
-        <p>Per concludere il pasto, non dimenticare di assaggiare i nostri dolci fatti in casa. Non te ne pentirai!</p>
-      </li>
-    </ul>
+    <div class="menu-container">
+      <h2>Our Menu</h2>
+      <div class="menu-item">
+        <div class="item-image">
+          <img src="img/pizza.jpg" alt="Pizza">
+        </div>
+        <div class="item-description">
+          <h3>Pizza</h3>
+          <p>A delicious pizza made with fresh ingredients.</p>
+          <p class="price">$12.99</p>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="item-image">
+          <img src="img/pasta.jpg" alt="Pasta">
+        </div>
+        <div class="item-description">
+          <h3>Pasta</h3>
+          <p>A classic pasta dish made with our homemade sauce.</p>
+          <p class="price">$9.99</p>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="item-image">
+          <img src="img/salad.jpg" alt="Salad">
+        </div>
+        <div class="item-description">
+          <h3>Salad</h3>
+          <p>A healthy and refreshing salad made with local produce.</p>
+          <p class="price">$7.99</p>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section id="prenota">
-    <h2>Prenota un tavolo</h2>
-    <form action="https://api.emailjs.com/api/v1.0/email/send" method="post" onsubmit="return validateForm()">
-      <input type="hidden" name="service_id" value="service_7nn7jl4">
-      <input type="hidden" name="template_id" value="template_5q075rk">
-      <input type="hidden" name="user_id" value="ja_63eFGLMCJkBxDv">
-      <div>
-        <label for="name">Nome</label>
+  <!-- Reservation -->
+  <section id="reservation">
+    <div class="reservation-container">
+      <h2>Reservation</h2>
+      <form id="reservation-form">
+        <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
-      </div>
-      <div>
-        <label for="email">Email</label>
+        <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
-      </div>
-      <div>
-        <label for="date">Data</label>
+        <label for="date">Date:</label>
         <input type="date" id="date" name="date" required>
-      </div>
-      <div>
-        <label for="time">Orario</label>
+        <label for="time">Time:</label>
         <input type="time" id="time" name="time" required>
-      </div>
+        <label for="guests">Number of guests:</label>
+        <input type="number" id="guests" name="guests" required>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
