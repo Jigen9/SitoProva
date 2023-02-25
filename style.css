@@ -1,0 +1,70 @@
+/* Impostazioni globali */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Intestazione */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+/* Titolo principale */
+h1 {
+  font-size: 36px;
+  margin: 0;
+}
+
+/* Navigazione principale */
+nav {
+  background-color: #eee;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+nav a {
+  color: #333;
+  text-decoration: none;
+  padding: 5px;
+}
+
+nav a:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Contenuto principale */
+main {
+  padding: 20px;
+}
+
+/* Pulsanti */
+.btn {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.btn:hover {
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+}
