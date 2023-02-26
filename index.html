@@ -4,16 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pizzeria-Ristorante</title>
-  <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://my.mailjs.com">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'nonce-123456' 'self' https://my.mailjs.com;">
   <link rel="stylesheet" href="style.css">
- <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
-    <script>
-      (function(){
-        emailjs.init("ja_63eFGLMCJkBxDv");
-      })();
-    </script>
-</script>
-
 </head>
 <body>
   <!-- Header -->
@@ -99,7 +91,7 @@
       </div>
       <div class="form-group">
         <label for="time">Ora</label>
-        <input type="time" id="time" name="time" required>
+        <input type="time" id="time" name="porcodio" required>
       </div>
       <div class="form-group">
         <label for="guests">Ospiti</label>
@@ -112,7 +104,21 @@
           <option value="6+">6+ ospiti</option>
         </select>
       </div>
-      <button type="submit" class="btn">Prenota</button>
+      <button onclick="sendEmail()">Send Email</button>
+    <script nonce="123456">
+      function sendEmail() {
+        emailjs.send('service_7nn7jl4', 'template_58uxsjd', { 'message_html': 'Hello World' })
+          .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+          }, function(error) {
+            console.log('FAILED...', error);
+          });
+      }
+    </script>
+    <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+    <script>
+      emailjs.init('ja_63eFGLMCJkBxDv');
+    </script>
     </form>
   </div>
 </section>
