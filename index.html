@@ -1,65 +1,59 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Prenotazione ristorante</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://my.mailjs.com https://cdn.emailjs.com">
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://my.mailjs.com 'nonce-random-string'">
-  </head>
-  <body>
-    <h1>Prenotazione ristorante</h1>
-    <form>
-      <label for="name">Nome:</label>
-      <input type="text" id="name" name="name" required><br>
+<html lang="en">
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required><br>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://cdn.emailjs.com https://*.emailjs.com; script-src 'self' 'nonce-12345' https://cdn.emailjs.com https://*.emailjs.com 'unsafe-inline';">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prenotazione Pizzeria</title>
+</head>
 
-      <label for="date">Data:</label>
-      <input type="date" id="date" name="date" required><br>
+<body>
+  <h1>Prenotazione</h1>
+  <form id="booking-form">
+    <label for="name">Nome:</label>
+    <input type="text" id="name" name="name" required>
+    <br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <br>
+    <label for="phone">Telefono:</label>
+    <input type="tel" id="phone" name="phone" required>
+    <br>
+    <label for="date">Data:</label>
+    <input type="date" id="date" name="date" required>
+    <br>
+    <label for="time">Orario:</label>
+    <input type="time" id="time" name="time" required>
+    <br>
+    <label for="guests">Ospiti:</label>
+    <input type="number" id="guests" name="guests" min="1" max="10" required>
+    <br>
+    <label for="notes">Note:</label>
+    <textarea id="notes" name="notes"></textarea>
+    <br>
+    <button type="submit">Invia</button>
+  </form>
 
-      <label for="time">Ora:</label>
-      <input type="time" id="time" name="time" required><br>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script nonce="12345">
+    (function () {
+      emailjs.init("ja_63eFGLMCJkBxDv");
+    })();
 
-      <label for="guests">Numero di ospiti:</label>
-      <input type="number" id="guests" name="guests" min="1" max="10" required><br>
+    const form = document.getElementById('booking-form');
 
-      <input type="submit" value="Prenota" onclick="inviaEmail(); return false;">
-    </form>
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      emailjs.sendForm('service_7nn7jl4', 'template_58uxsjd', this)
+        .then(function () {
+          alert('La tua prenotazione è stata inviata con successo!');
+          form.reset();
+        }, function (error) {
+          alert('Errore durante l\'invio della prenotazione: ' + error.text);
+        });
+    });
+  </script>
+</body>
 
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script nonce="random-string">
-      (function(){
-        emailjs.init('ja_63eFGLMCJkBxDv');
-      })();
-    </script>
-
-    <script nonce="random-string">
-      function inviaEmail() {
-        var name = document.getElementById('name').value;
-        var email = document.getElementById('email').value;
-        var date = document.getElementById('date').value;
-        var time = document.getElementById('time').value;
-        var guests = document.getElementById('guests').value;
-
-        var templateParams = {
-          name: name,
-          email: email,
-          date: date,
-          time: time,
-          guests: guests
-        };
-
-        emailjs.send('service_7nn7jl4', 'template_58uxsjd', templateParams)
-          .then(function(response) {
-            console.log('SUCCESS!', response.status, response.text);
-            alert('La tua prenotazione è stata inviata con successo!');
-          }, function(error) {
-            console.log('FAILED...', error);
-            alert('Si è verificato un errore durante l\'invio della prenotazione.');
-          });
-      }
-    </script>
-  </body>
 </html>
