@@ -1,49 +1,105 @@
-.booking-section {
-  background-color: #f7ede2;
-  padding: 50px;
+/* Impostazioni di base per il body */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #F5D0C5;
 }
 
-.booking-title {
-  font-size: 2rem;
-  color: #6d6875;
+/* Sezione di prenotazione */
+
+.booking-section {
+  background-color: #F5D0C5;
+  border: 1px solid #E6B1A8;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.booking-section h2 {
+  font-size: 32px;
+  color: #4C4C4C;
+  margin-bottom: 20px;
   text-align: center;
-  margin-bottom: 30px;
 }
 
 .booking-form {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
-.booking-label {
-  display: block;
-  font-size: 1.2rem;
-  color: #6d6875;
+.booking-form label {
+  font-size: 20px;
+  color: #4C4C4C;
+  margin-right: 20px;
   margin-bottom: 10px;
 }
 
-.booking-input {
+.booking-form input[type=text], .booking-form input[type=email], .booking-form textarea {
+  font-size: 20px;
   padding: 10px;
+  margin-bottom: 20px;
   border-radius: 5px;
   border: none;
-  margin-bottom: 20px;
   width: 100%;
-  max-width: 400px;
 }
 
-.booking-button {
-  background-color: #d1cfcf;
-  color: #fff;
-  border: none;
+.booking-form input[type=date], .booking-form input[type=time], .booking-form input[type=number] {
+  font-size: 20px;
+  padding: 10px;
+  margin-bottom: 20px;
   border-radius: 5px;
+  border: none;
+}
+
+.booking-form input[type=submit] {
+  background-color: #E6B1A8;
+  color: #fff;
+  font-size: 24px;
   padding: 10px 20px;
-  font-size: 1.2rem;
+  border-radius: 5px;
+  border: none;
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
+  width: 100%;
   margin-top: 20px;
 }
 
-.booking-button:hover {
-  background-color: #6d6875;
+.booking-form input[type=submit]:hover {
+  background-color: #D9988E;
+}
+
+/* Regole per i messaggi di errore */
+
+.error-message {
+  color: #f00;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Media query per dispositivi mobili */
+
+@media (max-width: 480px) {
+  .booking-section {
+    margin: 0 10px;
+  }
+  
+  .booking-form label {
+    font-size: 16px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .booking-form input[type=text], .booking-form input[type=email], .booking-form textarea, .booking-form input[type=date], .booking-form input[type=time], .booking-form input[type=number] {
+    font-size: 16px;
+    padding: 8px;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  
+  .booking-form input[type=submit] {
+    font-size: 20px;
+    padding: 10px;
+    margin-top: 10px;
+  }
 }
