@@ -1,127 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pizzeria-Ristorante</title>
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'nonce-123456' 'self' https://my.mailjs.com;">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <!-- Header -->
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#menu">Menu</a></li>
-        <li><a href="#reservation">Reservation</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Prenotazioni - Pizzeria Ristorante</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.emailjs.com; connect-src 'self' https://api.emailjs.com" />
+  </head>
+  <body>
+    <h1>Prenotazioni</h1>
+    <form id="booking-form">
+      <label for="name">Nome:</label>
+      <input type="text" id="name" name="name" required /><br />
 
-  <!-- Banner -->
-  <section id="home">
-    <div class="banner">
-      <h1>Pizzeria-Ristorante</h1>
-      <p>Welcome to our restaurant!</p>
-    </div>
-  </section>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required /><br />
 
-  <!-- Menu -->
-  <section id="menu">
-    <div class="menu-container">
-      <h2>Our Menu</h2>
-      <div class="menu-item">
-        <div class="item-image">
-          <img src="img/pizza.jpg" alt="Pizza">
-        </div>
-        <div class="item-description">
-          <h3>Pizza</h3>
-          <p>A delicious pizza made with fresh ingredients.</p>
-          <p class="price">$12.99</p>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div class="item-image">
-          <img src="img/pasta.jpg" alt="Pasta">
-        </div>
-        <div class="item-description">
-          <h3>Pasta</h3>
-          <p>A classic pasta dish made with our homemade sauce.</p>
-          <p class="price">$9.99</p>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div class="item-image">
-          <img src="img/salad.jpg" alt="Salad">
-        </div>
-        <div class="item-description">
-          <h3>Salad</h3>
-          <p>A healthy and refreshing salad made with local produce.</p>
-          <p class="price">$7.99</p>
-        </div>
-      </div>
-    </div>
-  </section>
+      <label for="date">Data:</label>
+      <input type="date" id="date" name="date" required /><br />
 
-  <!-- Reservation -->
-  <section id="reservation">
-  <div class="container">
-    <h2>Prenota un tavolo</h2>
-    <form action="https://api.emailjs.com/api/v1.0/email/send" method="post">
-      <input type="hidden" name="service_id" value="service_4gfjzts">
-      <input type="hidden" name="template_id" value="template_58uxsjd">
-      <input type="hidden" name="user_id" value="ja_63eFGLMCJkBxDv">
-      <div class="form-group">
-        <label for="name">Nome</label>
-        <input type="text" id="name" name="name" required>
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
-      </div>
-      <div class="form-group">
-        <label for="phone">Telefono</label>
-        <input type="tel" id="phone" name="phone" required>
-      </div>
-      <div class="form-group">
-        <label for="date">Data</label>
-        <input type="date" id="date" name="date" required>
-      </div>
-      <div class="form-group">
-        <label for="time">Ora</label>
-        <input type="time" id="time" name="porcodio" required>
-      </div>
-      <div class="form-group">
-        <label for="guests">Ospiti</label>
-        <select id="guests" name="guests" required>
-          <option value="1">1 ospite</option>
-          <option value="2">2 ospiti</option>
-          <option value="3">3 ospiti</option>
-          <option value="4">4 ospiti</option>
-          <option value="5">5 ospiti</option>
-          <option value="6+">6+ ospiti</option>
-        </select>
-      </div>
-      <button onclick="sendEmail()">Send Email</button>
-    <script nonce="123456">
-      function sendEmail() {
-        emailjs.send('service_7nn7jl4', 'template_58uxsjd', { 'message_html': 'Hello World' })
-          .then(function(response) {
-            console.log('SUCCESS!', response.status, response.text);
-          }, function(error) {
-            console.log('FAILED...', error);
-          });
-      }
-    </script>
+      <label for="time">Ora:</label>
+      <input type="time" id="time" name="time" required /><br />
+
+      <label for="guests">Numero di ospiti:</label>
+      <input type="number" id="guests" name="guests" required min="1" max="10" /><br />
+
+      <label for="message">Messaggio:</label>
+      <textarea id="message" name="message" rows="4"></textarea><br />
+
+      <button type="submit">Invia prenotazione</button>
+    </form>
+
     <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
     <script>
-      emailjs.init('ja_63eFGLMCJkBxDv');
-    </script>
-    </form>
-  </div>
-</section>
+      (function() {
+        // Aggiungi l'API key e il service ID di EmailJS
+        emailjs.init("ja_63eFGLMCJkBxDv");
 
-  <!-- Contact -->
-  <section id="contact">
+        // Aggiungi l'event listener per la submit del form
+        document.getElementById("booking-form").addEventListener("submit", function(event) {
+          event.preventDefault();
+
+          // Recupera i dati dal form
+          var name = document.getElementById("name").value;
+          var email = document.getElementById("email").value;
+          var date = document.getElementById("date").value;
+          var time = document.getElementById("time").value;
+          var guests = document.getElementById("guests").value;
+          var message = document.getElementById("message").value;
+
+          // Invia i dati a EmailJS
+          emailjs.send("service_7nn7jl4", "template_58uxsjd", {
+            name: name,
+            email: email,
+            date: date,
+            time: time,
+            guests: guests,
+            message: message
+          }).then(function(response) {
+            alert("La prenotazione è stata inviata con successo!");
+            document.getElementById("booking-form").reset();
+          }, function(error) {
+            alert("Si è verificato un errore durante l'invio della prenotazione. Riprova più tardi.");
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>
