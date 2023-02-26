@@ -1,70 +1,49 @@
-/* Impostazioni globali */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+.booking-section {
+  background-color: #f7ede2;
+  padding: 50px;
 }
 
-/* Intestazione */
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
+.booking-title {
+  font-size: 2rem;
+  color: #6d6875;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
-/* Titolo principale */
-h1 {
-  font-size: 36px;
-  margin: 0;
+.booking-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-/* Navigazione principale */
-nav {
-  background-color: #eee;
+.booking-label {
+  display: block;
+  font-size: 1.2rem;
+  color: #6d6875;
+  margin-bottom: 10px;
+}
+
+.booking-input {
   padding: 10px;
-  margin-top: 20px;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 400px;
 }
 
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav li {
-  display: inline-block;
-  margin-right: 10px;
-}
-
-nav a {
-  color: #333;
-  text-decoration: none;
-  padding: 5px;
-}
-
-nav a:hover {
-  background-color: #333;
+.booking-button {
+  background-color: #d1cfcf;
   color: #fff;
-}
-
-/* Contenuto principale */
-main {
-  padding: 20px;
-}
-
-/* Pulsanti */
-.btn {
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
   border: none;
   border-radius: 5px;
-  text-decoration: none;
-  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
   margin-top: 20px;
 }
 
-.btn:hover {
-  background-color: #fff;
-  color: #333;
-  cursor: pointer;
+.booking-button:hover {
+  background-color: #6d6875;
 }
